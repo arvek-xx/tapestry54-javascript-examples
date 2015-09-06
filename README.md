@@ -73,7 +73,7 @@ define([ 'angular' ], function(angular) {
 
 	});
 });
-```javascript
+```
 
 3. Import in class-file:
 ```
