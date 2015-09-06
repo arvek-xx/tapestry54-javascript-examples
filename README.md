@@ -81,7 +81,7 @@ define([ 'angular' ], function(angular) {
 </pre>
 
 4. Edit template-file
-<pre>
+<code>
 <html t:type="layout" title="Tapestry 5.4 with AngularJS"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
@@ -111,4 +111,4 @@ define([ 'angular' ], function(angular) {
 	</div> <!-- end ng-controller -->
 </body>
 </html>
-</pre>
+</code>
