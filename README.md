@@ -8,7 +8,7 @@ Please visit [demo application] (http://tap54-arvek.rhcloud.com/)
 ## Example code
 Eksample of using AngularJS inside Tapestry.
 
-1. Bootstrap Angular:
+* Bootstrap Angular:
 ```javascript
 (function() {
 	'use strict';
@@ -33,7 +33,7 @@ Eksample of using AngularJS inside Tapestry.
 }());
 ```
 
-2. Write Angular code:
+* Write Angular code:
 ```javascript
 define([ 'angular' ], function(angular) {
 	angular.module('todoApp', []).controller('TodoListController', function() {
@@ -78,12 +78,12 @@ define([ 'angular' ], function(angular) {
 });
 ```
 
-3. Import in class-file:
+* Import in class-file:
 ```
 @Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
 ```
 
-4. Edit template-file
+* Edit template-file
 ```
 <html t:type="layout" title="Tapestry 5.4 with AngularJS"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
