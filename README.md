@@ -81,6 +81,9 @@ define([ 'angular' ], function(angular) {
 * Import in class-file:
 ```java
 @Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
+public class NgTodo
+{
+}
 ```
 
 * Edit template-file
