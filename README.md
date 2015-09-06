@@ -6,7 +6,7 @@ Different techniques to easily include different javascript libraries/framework 
 Eksample of using AngularJS inside Tapestry.
 
 1. Bootstrap Angular:
-<pre>
+```javascript
 (function() {
 	'use strict';
 	require.config({
@@ -28,10 +28,10 @@ Eksample of using AngularJS inside Tapestry.
 		angular.bootstrap(angular.element("body"), [ 'todoApp' ]);
 	});
 }());
-</pre>
+```
 
 2. Write Angular code:
-<pre>
+```javascript
 define([ 'angular' ], function(angular) {
 	angular.module('todoApp', []).controller('TodoListController', function() {
 		var todoList = this;
@@ -73,15 +73,15 @@ define([ 'angular' ], function(angular) {
 
 	});
 });
-</pre>
+```javascript
 
 3. Import in class-file:
-<pre>
+```
 @Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
-</pre>
+```
 
 4. Edit template-file
-<code>
+```
 <html t:type="layout" title="Tapestry 5.4 with AngularJS"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
@@ -111,4 +111,4 @@ define([ 'angular' ], function(angular) {
 	</div> <!-- end ng-controller -->
 </body>
 </html>
-</code>
+```
