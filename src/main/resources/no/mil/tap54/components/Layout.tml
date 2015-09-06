@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+<meta charset="utf-8" />
+<title>${title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Tapestry 5.4. Different techniques to include different javascript libraries/framework"/>
+<meta name="author" content="Arve Klev" />
+<link rel="shortcut icon" href="${asset:context:/favicon.ico}" />
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<t:pagelink page="index" class="navbar-brand">Tapestry 5.4 examples</t:pagelink>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<t:loop source="pageNames" value="pageName">
+						<t:any element="li" class="prop:classForPageName">
+							<t:pagelink page="prop:pageName">${pageName}</t:pagelink>
+						</t:any>
+					</t:loop>
+				</ul>
+				<span class="navbar-right">
+					<li><t:pagelink page="login" class="btn navbar-btn">Sign in</t:pagelink></li>
+				</span>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<t:alerts />
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="content">
+			<div class="page-header">
+				<h1>${title}</h1>
+			</div>
+			<t:body />
+			<br />
+			<!-- Footer ================================================== -->
+			<div class="panel-footer text-center">
+				<a href="mailto:arveklev@gmail.com?Subject=Tapestry5.4-examples" target="_top">arveklev@gmail.com</a> - <small>${appVersion}</small>
+			</div>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /container -->
+</body>
+</html>

@@ -1,0 +1,9 @@
+ ----
+ Module no.mil.tap54:tap54
+ ----
+
+no.mil.tap54:tap54 Documentation
+
+  This is where you can start to document your module.
+
+  Create new files in the Maven APT format, and update the site.xml file to point to them.

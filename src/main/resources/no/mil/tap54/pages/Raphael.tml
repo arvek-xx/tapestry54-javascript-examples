@@ -1,0 +1,11 @@
+<html t:type="layout" title="Tapestry 5.4 with Raphael" 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div>
+	<span id="compare" valueTapestry="${tapestry}" valueAngular="${angular}" valueHighcharts="${highcharts}" 
+		category="Web">
+	</span>
+</div>
+
+</html>

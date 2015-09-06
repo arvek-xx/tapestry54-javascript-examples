@@ -1,0 +1,18 @@
+<html t:type="layout" title="Tapestry 5.4 with Jchart" 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div id="compare" class="jChart chart-lg" name="Comparing...">
+	<div class="define-chart-row" data-color="#7cb5ec" title="Tapestry">${tapestry}</div>
+	<div class="define-chart-row" data-color="#434348" title="Angular">${angular}</div>
+	<div class="define-chart-row" data-color="#90ed7d" title="JChart">${highcharts}</div>
+
+	<div class="define-chart-footer">100</div>
+	<div class="define-chart-footer">200</div>
+	<div class="define-chart-footer">300</div>
+	<div class="define-chart-footer">400</div>
+	<div class="define-chart-footer">500</div>
+	<div class="define-chart-footer">600</div>
+</div>
+
+</html>

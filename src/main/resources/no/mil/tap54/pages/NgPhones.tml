@@ -1,0 +1,40 @@
+<html t:type="layout" title="Tapestry 5.4 with AngularJS - Phones" 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<!-- <body ng-app="phoneCatApp"> done from 'phonecatapp-bootstrap' -->
+<body>
+	<div class="well">
+		<p>This is an angular application inside Tapestry.</p>
+		<p>Phone-data (all) are fetched by a rest-service: <a href="rest/phones">rest/phones</a></p>
+		<p>Phone-data (age=1) are fetched by a rest-service: <a href="rest/phones/1">rest/phones/1</a></p>
+	</div>
+	
+	<div ng-controller='PhoneListCtrl'>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<!--Sidebar content-->
+					Search: <input ng-model="query" /> 
+					Sort by: <select ng-model="orderProp">
+						<option value="name">Alphabetical</option>
+						<option value="age">Newest</option>
+					</select>
+
+				</div>
+				<div class="col-md-10">
+					<!--Body content-->
+					<ul class="phones">
+						<li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+							<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"/></a>
+							<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+							<p>{{phone.snippet}}</p>
+							<p>Age: {{phone.age}}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end ng-controller -->
+</body>
+</html>
