@@ -74,3 +74,8 @@ define([ 'angular' ], function(angular) {
 	});
 });
 </pre>
+
+3. Import in class-file:
+<pre>
+@Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
+</pre>
