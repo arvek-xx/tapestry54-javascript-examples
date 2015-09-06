@@ -3,7 +3,7 @@
 Different techniques to easily include different javascript libraries/framework in Tapestry 5.4.
 
 ## Demo
-Please visit [demo application] (http://tap54-arvek.rhcloud.com/)
+Please visit [a running example] (http://tap54-arvek.rhcloud.com/)
 
 ## Example code
 Eksample of using AngularJS inside Tapestry.
