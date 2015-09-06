@@ -79,3 +79,36 @@ define([ 'angular' ], function(angular) {
 <pre>
 @Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
 </pre>
+
+4. Edit template-file
+<pre>
+<html t:type="layout" title="Tapestry 5.4 with AngularJS"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<!-- <body ng-app="todoApp"> done from 'angular-bootstrap' -->
+<body>
+	<div class="well">
+		<p>This is a simple todo-list angular application inside Tapestry.</p>
+	</div>
+
+	<div ng-controller='TodoListController'>
+		<h2>Todo</h2>
+		<div ng-controller='TodoListController as todoList'>
+			<span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+			[ <a href="" ng-click='todoList.archive()'>archive</a> ]
+			<ul class="unstyled">
+				<li ng-repeat='todo in todoList.todos'>
+					<input type="checkbox" ng-model='todo.done' /> <span class='done-{{todo.done}}'>{{todo.text}}</span>
+				</li>
+			</ul>
+			
+			<form ng-submit='todoList.addTodo()'>
+				<input type="text" ng-model='todoList.todoText' size="30" placeholder="add new todo here" />
+				<input class="btn-primary" type="submit" value="add" />
+			</form>
+		</div>
+	</div> <!-- end ng-controller -->
+</body>
+</html>
+</pre>
