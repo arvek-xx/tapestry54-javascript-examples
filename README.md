@@ -79,12 +79,12 @@ define([ 'angular' ], function(angular) {
 ```
 
 * Import in class-file:
-```
+```java
 @Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })
 ```
 
 * Edit template-file
-```
+```html
 <html t:type="layout" title="Tapestry 5.4 with AngularJS"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
