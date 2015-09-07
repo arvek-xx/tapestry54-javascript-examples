@@ -34,7 +34,7 @@ public class Layout
 
 	public String[] getPageNames()
 	{
-		return new String[] { "Index", "NgTodo", "NgPhones", "Highcharts", "Jchart", "Raphael" };
+		return new String[] { "Index", "NgTodo", "NgPhones", "NgPhones2", "Highcharts", "Jchart", "Raphael" };
 	}
 
 }

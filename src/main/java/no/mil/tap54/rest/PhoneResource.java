@@ -24,11 +24,11 @@ public class PhoneResource
 	{
 		if (returnPhones == null || returnPhones.size() == 0)
 		{
-			returnPhones.add(new Phones(0,"motorola-xoom-with-wi-fi","images/motorola-xoom-with-wi-fi.0.jpg","Motorola XOOM\u2122 with Wi-Fi","The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."));
-			returnPhones.add(new Phones(1,"motorola-xoom","images/motorola-xoom.0.jpg","MOTOROLA XOOM\u2122","The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."));
-			returnPhones.add(new Phones(2, "motorola-atrix-4g", "images/motorola-atrix-4g.0.jpg","MOTOROLA ATRIX\u2122 4G", "MOTOROLA ATRIX 4G the world's most powerful smartphone."));
-			returnPhones.add(new Phones(3, "dell-venue", "images/dell-venue.0.jpg", "Dell Venue","The Dell Venue; Your Personal Express Lane to Everything"));
-			returnPhones.add(new Phones(4,"nexus-s","images/nexus-s.0.jpg","Nexus S","Fast just got faster with Nexus S. A pure Google experience, Nexus S is the first phone to run Gingerbread (Android 2.3), the fastest version of Android yet."));
+			returnPhones.add(new Phones(0,"motorola-xoom-with-wi-fi","img/phones/motorola-xoom-with-wi-fi.0.jpg","Motorola XOOM\u2122 with Wi-Fi","The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."));
+			returnPhones.add(new Phones(1,"motorola-xoom","img/phones/motorola-xoom.0.jpg","MOTOROLA XOOM\u2122","The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."));
+			returnPhones.add(new Phones(2, "motorola-atrix-4g", "img/phones/motorola-atrix-4g.0.jpg","MOTOROLA ATRIX\u2122 4G", "MOTOROLA ATRIX 4G the world's most powerful smartphone."));
+			returnPhones.add(new Phones(3, "dell-venue", "img/phones/dell-venue.0.jpg", "Dell Venue","The Dell Venue; Your Personal Express Lane to Everything"));
+			returnPhones.add(new Phones(4,"nexus-s","img/phones/nexus-s.0.jpg","Nexus S","Fast just got faster with Nexus S. A pure Google experience, Nexus S is the first phone to run Gingerbread (Android 2.3), the fastest version of Android yet."));
 		}
 		return returnPhones;
 	}

@@ -5,16 +5,16 @@
 <!-- <body ng-app="phoneCatApp"> done from 'phonecatapp-bootstrap' -->
 <body>
 	<div class="well">
-		<p>This is an angular application inside Tapestry.</p>
+		<p>This is an angular application inside Tapestry. 
+			Currently up to <a href="https://docs.angularjs.org/tutorial/step_06" target="_blank">tutorial/step_06</a></p>
 		<p>Phone-data (all) are fetched by a rest-service: <a href="rest/phones">rest/phones</a></p>
 		<p>Phone-data (age=1) are fetched by a rest-service: <a href="rest/phones/1">rest/phones/1</a></p>
 	</div>
-	
+
 	<div ng-controller='PhoneListCtrl'>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-2">
-					<!--Sidebar content-->
 					Search: <input ng-model="query" /> 
 					Sort by: <select ng-model="orderProp">
 						<option value="name">Alphabetical</option>
@@ -23,7 +23,6 @@
 
 				</div>
 				<div class="col-md-10">
-					<!--Body content-->
 					<ul class="phones">
 						<li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
 							<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"/></a>
@@ -35,6 +34,6 @@
 				</div>
 			</div>
 		</div>
-	</div> <!-- end ng-controller -->
+	</div> <!-- end ng-controller  -->
 </body>
 </html>

@@ -20,7 +20,7 @@ public class AppModule
 
 	public static void contributeFactoryDefaults(MappedConfiguration<String, Object> configuration)
 	{
-		configuration.override(SymbolConstants.APPLICATION_VERSION, "0.1.0 (2015-09-06)");
+		configuration.override(SymbolConstants.APPLICATION_VERSION, "0.1.1 (2015-09-07)");
 		configuration.override(SymbolConstants.PRODUCTION_MODE, false);
 	}
 
