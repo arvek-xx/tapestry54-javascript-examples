@@ -6,7 +6,9 @@
 		<div class="col-md-8">
 			<h3>${message:greeting}</h3>
 			<p>Different techniques to easily include different javascript libraries/framework in Tapestry 5.4.</p>
-			<p><small>(Sorry for the lack of indention of the code listings - problems with prettify/bootstrap)</small></p>
+			<p>The complete source code for these examples is at <a href="https://github.com/arvek-xx/tapestry54-javascript-examples" target="_blank">GitHub</a>.</p>
+			<p>All categories of examples is listed below, though not in detail.
+				<small>(Sorry for the lack of indention of the code listings - problems with prettify/bootstrap)</small></p>
 		</div>
 		<div class="col-md-4">
 			<img src="${asset:context:images/tapestry.png}" alt="${message:greeting}" title="${message:greeting}" height="80" />
@@ -28,6 +30,8 @@
 					<t:pagelink page="NgTodo" class="btn btn-primary btn-large">Run AngularJS TodoApp &raquo;</t:pagelink>
 					&nbsp;
 					<t:pagelink page="NgPhones" class="btn btn-primary btn-large">Run AngularJS PhoneApp &raquo;</t:pagelink>
+					&nbsp;
+					<t:pagelink page="NgPhones2" class="btn btn-primary btn-large">Run a complete AngularJS PhoneApp &raquo;</t:pagelink>
 				</p>
 				Eksample code is reused from <a href="https://angularjs.org" target="_blank">https://angularjs.org</a>
 				<ul>
