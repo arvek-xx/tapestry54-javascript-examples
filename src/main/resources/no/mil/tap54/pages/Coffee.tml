@@ -1,0 +1,7 @@
+<html t:type="layout" title="Coffee" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+	<img src="${context:images/F-35.png}" alt="F-35" id="f35left" />
+
+	<p>Simple Coffee script (and JQuery)</p>
+	
+</html>

@@ -1,0 +1,13 @@
+<html t:type="layout" title="Bootstrap Popover and ToolTip" 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<button type="button" class="btn btn-lg btn-primary" data-toggle="popover" id="myPop" title="Bootstrap popover title"
+	data-content="And here's some amazing content.">Click to see 'Popover'</button>
+&nbsp;
+
+<button type="button" class="btn btn-lg btn-success" data-toggle="tooltip" id="myTool" title="This is the Bootstrap tooltip">
+	Mouse-over to see 'Tooltip'</button>
+<br/>
+
+</html>

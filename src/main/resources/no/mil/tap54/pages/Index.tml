@@ -1,21 +1,21 @@
 <html t:type="layout" title="Welcome!" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 
-
-<div class="hero-unit">
-	<div class="row">
-		<div class="col-md-8">
-			<h3>${message:greeting}</h3>
-			<p>Different techniques to easily include different javascript libraries/framework in Tapestry 5.4.</p>
-			<p>The complete source code for these examples is at <a href="https://github.com/arvek-xx/tapestry54-javascript-examples" target="_blank">GitHub</a>.</p>
-			<p>All categories of examples is listed below, though not in detail.
-				<small>(Sorry for the lack of indention of the code listings - problems with prettify/bootstrap)</small></p>
-		</div>
-		<div class="col-md-4">
-			<img src="${asset:context:images/tapestry.png}" alt="${message:greeting}" title="${message:greeting}" height="80" />
-		</div>
+<div class="row">
+	<div class="col-md-8">
+		<h3>${message:greeting}</h3>
+		<p>Different techniques to easily use different javascript libraries/framework in Tapestry 5.4.</p>
+		<p>The complete source code for these examples is at <a href="https://github.com/arvek-xx/tapestry54-javascript-examples" target="_blank">GitHub</a>.</p>
+		<p>All categories of examples is listed below.
+			<small>(Code in the listings are inserted by<br/>
+			<code>&lt;t:OutputRaw value="categoryTypeCode"/&gt;</code>, to maintain indention from <em>Prettyprint</em>)</small></p>
+	</div>
+	<div class="col-md-4">
+		<img src="${asset:context:images/tapestry.png}" alt="${message:greeting}" title="${message:greeting}" height="80" />
 	</div>
 </div>
 
+<h4>Categories</h4>
+<p>Click on an <em>accordion</em> to see:</p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 	<div class="panel panel-default">
 		<div class="panel-heading" role="tab" id="headingAngular">
@@ -24,7 +24,7 @@
 					aria-controls="collapseAngular"> AngularJS </a>
 			</h4>
 		</div>
-		<div id="collapseAngular" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAngular">
+		<div id="collapseAngular" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAngular">
 			<div class="panel-body">
 				<p>
 					<t:pagelink page="NgTodo" class="btn btn-primary btn-large">Run AngularJS TodoApp &raquo;</t:pagelink>
@@ -45,80 +45,19 @@
 					</li>
 					<li>Create a file <em>src/main/resources/META-INF/assets/my-angular-code.css</em> for decoration
 					</li>
-					<li>Import <em>angular-bootstrap.js</em> and <em>my-angular-code.css</em> in your class-file: 
-						<span class="badge">
-							<em>@Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })</em></span>
+					<li>Import <em>angular-bootstrap.js</em> and <em>my-angular-code.css</em> in your class-file:<br/>
+						<mark><samp>@Import(module = { "angular-bootstrap" }, stylesheet = { "my-angular-code.css" })</samp></mark> 
 					</li>
 				</ul>
 				<p>
 					That's it! Hava a look at the source-code for <span class="badge"><em>angular-bootstrap.js</em></span>
 					and <span class="badge"><em>my-angular-code.js</em></span>
 				</p>
-				<pre class="prettyprint linenums" style="white-space: pre;">
-					(function() {
-						'use strict';
-						require.config({
-							paths : {
-								'angular' : 'angular',
-								'todoApp' : 'my-angular-code'
-							},
-							shim : {
-								'angular' : {
-									'exports' : 'angular'
-								},
-								'todoApp' : {
-									'exports' : 'todoApp',
-									deps : [ 'angular' ]
-								}
-							}
-						});
-						define([ 'angular', 'todoApp' ], function(angular) {
-							angular.bootstrap(angular.element("body"), [ 'todoApp' ]);
-						});
-					}());
-      			</pre>
 				<pre class="prettyprint linenums">
-					define([ 'angular' ], function(angular) {
-						angular.module('todoApp', []).controller('TodoListController', function() {
-							var todoList = this;
-							todoList.todos = [ {
-								text : 'Start with Tapestry 5.4',
-								done : true
-							}, {
-								text : 'Get angular',
-								done : true
-							}, {
-								text : 'Build a Tapestry/Angular app',
-								done : false
-							} ];
-					
-							todoList.addTodo = function() {
-								todoList.todos.push({
-									text : todoList.todoText,
-									done : false
-								});
-								todoList.todoText = '';
-							};
-					
-							todoList.remaining = function() {
-								var count = 0;
-								angular.forEach(todoList.todos, function(todo) {
-									count += todo.done ? 0 : 1;
-								});
-								return count;
-							};
-					
-							todoList.archive = function() {
-								var oldTodos = todoList.todos;
-								todoList.todos = [];
-								angular.forEach(oldTodos, function(todo) {
-									if (!todo.done)
-										todoList.todos.push(todo);
-								});
-							};
-					
-						});
-					});
+					<t:OutputRaw value="angularBootstrapCode"/>
+     			</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="angularCode"/>
       			</pre>
 			</div>
 		</div>
@@ -145,60 +84,15 @@
 					<li>Create a file <em>src/main/resources/META-INF/modules/my-highcharts-code.js</em> which is your highcharts
 						code
 					</li>
-					<li>Import <em>highcharts.js</em> and <em>my-highcharts-code.js</em> in your class-file: 
-						<span class="badge"><em>@Import(module = { "highcharts", "my-highcharts-code" })</em></span>
+					<li>Import <em>highcharts.js</em> and <em>my-highcharts-code.js</em> in your class-file:<br/>
+						<mark><samp>@Import(module = { "highcharts", "my-highcharts-code" })</samp></mark>  
 					</li>
 				</ul>
 				<p>
 					That's it! Hava a look at the source-code for <span class="badge"><em>my-highcharts-code.js</em></span>
 				</p>
 				<pre class="prettyprint linenums">
-					define([ "jquery", "highcharts" ], function($) {
-						$(function() {
-							var tag = $('#compare');
-							var dataTapestry = tag.attr("valueTapestry");
-							var dataAngular = tag.attr("valueAngular");
-							var dataHighcharts = tag.attr("valueHighcharts");
-							var category = tag.attr("category");
-					
-							var myArray = [];
-							myArray.push(parseInt(dataTapestry));
-							myArray.push(parseInt(dataAngular));
-							myArray.push(parseInt(dataHighcharts));
-					
-							$('#compare').highcharts(
-									{
-										chart : {
-											backgroundColor : {
-												linearGradient : [ 0, 0, 500, 500 ],
-												stops : [ [ 0, 'rgb(255, 255, 255)' ],
-														[ 1, 'rgb(200, 200, 255)' ] ]
-											},
-											type : 'bar'
-										},
-										title : {
-											text : 'Comparing...'
-										},
-										xAxis : {
-											categories : [ 'Tapestry', 'Angular', 'Highcharts' ]
-										},
-										plotOptions : {
-											series : {
-												colorByPoint : true
-											}
-										},
-										yAxis : {
-											title : {
-												text : 'Popularity'
-											}
-										},
-										series : [ {
-											name : category,
-											data : myArray
-										} ]
-									});
-						});
-					})
+					<t:OutputRaw value="highchartJsCode"/>
       			</pre>
 			</div>
 		</div>
@@ -219,29 +113,21 @@
 					<li>Download <em>jchart.js</em> from <a href="https://github.com/ldenison/jchart" target="_blank">https://github.com/ldenison/jchart</a>
 						and place the file in <em>src/main/resources/META-INF/modules/jchart.js</em>. 
 						Edit the file and insert <code>define(["jquery", "bootstrap/tooltip"], function($, tooltip) {</code> as the first line. 
-						After the last line insert <code>})</code>. The example is using the latest version
+						After the last line insert <code>})</code>. The example is using the latest version (Luke Denison on 13 May 2014)
 					</li>
 					<li>Download <em>main.css</em> from <a href="https://github.com/ldenison/jchart" target="_blank">https://github.com/ldenison/jchart</a>
 						and place the file in <em>src/main/resources/META-INF/assets/main.css</em>.
 					</li>
 					<li>Create a file <em>src/main/resources/META-INF/modules/my-jchart-code.js</em> which is your jchart code</li>
-					<li>Import <em>jchart.js</em> and <em>my-jchart-code.js</em> and <em>main.css</em> in your class-file: 
-						<span class="badge"><em>@Import(module = { "jchart", "my-jchart-code" }, stylesheet = { "main.css" })</em></span>
+					<li>Import <em>jchart.js</em> and <em>my-jchart-code.js</em> and <em>main.css</em> in your class-file:<br/>
+						<mark><samp>@Import(module = { "jchart", "my-jchart-code" }, stylesheet = { "main.css" })</samp></mark> 
 					</li>
 				</ul>
 				<p>
 					That's it! Hava a look at the source-code for <span class="badge"><em>my-jchart-code.js</em></span>
 				</p>
 				<pre class="prettyprint linenums">
-					define([ "jquery", "jchart" ], function($) {
-					
-						$(function() {
-							$("#compare").jChart({
-								x_label : "Popularity"
-							});
-						});
-					
-					})
+					<t:OutputRaw value="jchartJsCode"/>
 				</pre>
 			</div>
 		</div>
@@ -272,54 +158,155 @@
 						The example is using version 0.5.1
 					</li>
 					<li>Create a file <em>src/main/resources/META-INF/modules/my-raphael-code.js</em> which is your raphael code.
-						This file imports <em>raphael</em>, <em>g.raphael</em> and <em>g.bar</em>.
+						This file imports <em>raphael</em>, <em>g.raphael</em> and <em>g.bar</em>:<br/>
+						<mark><samp>require([ 'raphael' ], function(Raphael) { require([ 'g.raphael' ], function() { require([ 'g.bar' ], function() {</samp></mark> 
 					</li>
-					<li>Import <em>my-raphael-code.js</em> in your class-file: 
-						<span class="badge"><em>@Import(module = { "my-raphael-code" })</em></span></li>
+					<li>Import <em>my-raphael-code.js</em> in your class-file:<br/>
+						<mark><samp>@Import(module = { "my-raphael-code" })</samp></mark> 
+					</li>
 				</ul>
 				<p>
 					That's it! Hava a look at the source-code for <span class="badge"><em>my-raphael-code.js</em></span>
 				</p>
 				<br />
 				<pre class="prettyprint linenums">
-					require([ "raphael" ], function(Raphael) { require([ "g.raphael" ], function() { require([ "g.bar" ], function() {
-						var containerbar = document.getElementById("compare");
-						var paper = Raphael(containerbar, 550, 250);
-						var rect = paper.rect(0, 0, 550, 250);
-						rect.attr({
-							fill : '#d8d8ff'
-						});
-					
-						    fin = function () {
-						        this.flag = paper.popup(this.bar.x, this.bar.y, this.bar.value || "0").insertBefore(this);
-						    },
-						    fout = function () {
-						        this.flag.animate({opacity: 0}, 300, function () {this.remove();});
-						    },
-						    txtattr = { font: "18px 'Fontin Sans', Fontin-Sans, sans-serif" };
-					
-						var dataTapestry = parseInt(containerbar.getAttribute("valueTapestry"));
-						var dataAngular = parseInt(containerbar.getAttribute("valueAngular"));
-						var dataRaphael = parseInt(containerbar.getAttribute("valueHighcharts"));
-						var category = containerbar.getAttribute("category");
-					
-					    var barCategory = paper.hbarchart(100, 40, 400, 200, [[dataTapestry], [dataAngular], [dataRaphael]]).hover(fin, fout);
-					    
-						var textCategory = 	paper.text(250, 20, "Comparing...").attr({ font: "16px sans-serif" });
-						var footerCategory = paper.text(250, 235, "Popularity").attr({ font: "12px sans-serif" });
-						var labelTap = 	paper.text(50, 90, "Tapestry").attr({ font: "14px sans-serif" });
-						var labelAng = 	paper.text(50, 135, "Angular").attr({ font: "14px sans-serif" });
-						var labelRap = 	paper.text(50, 180, "Raphael").attr({ font: "14px sans-serif" });
-						
-						var group = paper.set();
-						group.push(barCategory, textCategory, labelTap, labelAng, labelRap);
-					
-					});});}); // after tree require	
+					<t:OutputRaw value="raphaelJsCode"/>
 				</pre>
 			</div>
 		</div>
 	</div>
-
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingBootstrap">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseBootstrap"
+					aria-expanded="false" aria-controls="collapseBootstrap"> Bootstrap and jQuery related JS libraries </a>
+			</h4>
+		</div>
+		<div id="collapseBootstrap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBootstrap">
+			<div class="panel-body">
+				<p>
+					<t:pagelink page="Bootstrap" class="btn btn-primary btn-large">Run Bootstrap &raquo;</t:pagelink>
+				</p>
+				<p>To use eg. Bootstrap popover.js, we must initialize ourself, we only need to do this:</p>
+				<ul>
+					<li>In the page class (include the modules as needed):<br/>
+						<mark><samp>@Import(module = { "bootstrap/popover", "my-popover-code" })</samp></mark>
+					</li>
+					<li>In the page tml:<br/>
+						<mark><samp>&lt;button type="button" class="btn btn-lg btn-primary" data-toggle="popover" id="myPop" title="Bootstrap popover title"
+							data-content="And here's some amazing content."&gt;Click to see 'Popover'&lt;/button&gt;
+						</samp></mark>
+					</li>
+					<li>In <em>my-popover-code</em>:<br/>
+						<mark><samp>define(["jquery", "bootstrap/popover"], function($, popover) {<br/>
+							&nbsp;&nbsp;&nbsp;var $pop = $("#myPop");<br/>
+							&nbsp;&nbsp;&nbsp;$pop.popover({placement : 'top'});<br/>
+							});
+						</samp></mark>
+					</li>
+				</ul>
+				<p>
+					That's it! Hava a look at the source-code for <span class="badge"><em>Bootstrap.java</em>,
+					 <em>Bootstrap.tml</em>, <em>my-popover-code.js</em></span>
+				</p>
+				<br/>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="bootstrapClassCode"/>
+				</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="bootstrapTmlCode"/>
+				</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="bootstrapJsCode"/>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingCoffee">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseCoffee"
+					aria-expanded="false" aria-controls="collapseCoffee"> Coffee (and jQuery) </a>
+			</h4>
+		</div>
+		<div id="collapseCoffee" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCoffee">
+			<div class="panel-body">
+				<p>
+					<t:pagelink page="Coffee" class="btn btn-primary btn-large">Run Coffee &raquo;</t:pagelink>
+				</p>
+				<p>To use Coffee script (and JQuery), we only need to do this:</p>
+				<ul>
+					<li>In the page class (include the modules as needed):<br/>
+						<mark><samp>@Import(module = { "my-coffee-code" })</samp></mark>
+					</li>
+					<li>In <em>my-coffee-code.coffee</em>:<br/>
+						<mark><samp>define([ "jquery" ], ($) -></samp></mark>
+					</li>
+				</ul>
+				<p>
+					That's it! Hava a look at the source-code for <span class="badge"><em>Coffee.java</em>,
+					 <em>Coffee.tml</em>, <em>my-coffee-code.coffee</em></span>
+				</p>
+				<br/>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="CoffeeClassCode"/>
+				</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="CoffeeTmlCode"/>
+				</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="CoffeeJsCode"/>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingReact">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReact" aria-expanded="true"
+					aria-controls="collapseReact"> React </a>
+			</h4>
+		</div>
+		<div id="collapseReact" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReact">
+			<div class="panel-body">
+				<p>
+					<t:pagelink page="React" class="btn btn-primary btn-large">Run React (tapestry-react) &raquo;</t:pagelink>
+				</p>
+				See: <a href="https://github.com/eddyson-de/tapestry-react" target="_blank">tapestry-react</a>.
+<!-- 				Eksample code is reused from <a href="http://facebook.github.io/react/docs/thinking-in-react.html" target="_blank">http://facebook.github.io/react/docs/thinking-in-react.html</a> -->
+				<ul>
+					<li>Update dependency in <em>pom.xml</em>:<br/>
+						<mark><samp>
+							&lt;groupId&gt;de.eddyson&lt;/groupId&gt;<br/>
+							&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;tapestry-react&lt;/artifactId&gt;<br/>
+							&lt;version&gt;0.1.2&lt;/version&gt;
+						</samp></mark> 
+					</li>
+					<li>Use component in tml-file:<br/>
+						<mark><samp>
+							&lt;r:reactcomponent module="react/my-react-code" name="There..." /&gt;
+						</samp></mark> 
+					</li>
+					<li>Create a file <em>src/main/resources/META-INF/modules/react/my-react-code.cjsx</em> which is your react code
+					</li>
+				</ul>
+				<p>
+					That's it! Hava a look at the source-code for <span class="badge"><em>pom.xml</em></span>,
+					 <span class="badge"><em>my-react-code.cjsx</em></span>, <span class="badge"><em>React.tml</em></span>
+				</p>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactPomCode"/>
+     			</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactTapestryJsCode"/>
+     			</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactTapestryTmlCode"/>
+     			</pre>
+			</div>
+		</div>
+	</div>
+	
 </div> <!-- class="panel-group" -->
 
 </html>

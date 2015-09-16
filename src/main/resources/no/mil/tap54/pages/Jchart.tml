@@ -2,6 +2,7 @@
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
 
+<!-- change default colors (data-color) simular to Highchart -->
 <div id="compare" class="jChart chart-lg" name="Comparing...">
 	<div class="define-chart-row" data-color="#7cb5ec" title="Tapestry">${tapestry}</div>
 	<div class="define-chart-row" data-color="#434348" title="Angular">${angular}</div>

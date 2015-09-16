@@ -20,7 +20,7 @@ public class AppModule
 
 	public static void contributeFactoryDefaults(MappedConfiguration<String, Object> configuration)
 	{
-		configuration.override(SymbolConstants.APPLICATION_VERSION, "0.1.1 (2015-09-07)");
+		configuration.override(SymbolConstants.APPLICATION_VERSION, "0.1.2 (2015-09-16)");
 		configuration.override(SymbolConstants.PRODUCTION_MODE, false);
 	}
 
@@ -40,26 +40,28 @@ public class AppModule
 	}
 
 	/**
-	 * Example: Get and put eg. javascript in Maven Dependencies from pom.xml.
-	 * See http://www.webjars.org/
-	 * 
-	 * @param configuration
-	 */
-	public static void contributeClasspathAssetAliasManager(MappedConfiguration<String, String> configuration)
-	{
-		configuration.add("webjars", "META-INF/resources/webjars");
-	}
-
-	/**
 	 * Configure Rest resources
 	 * 
 	 * @param singletons
 	 * @param phoneResource
 	 */
 	@Contribute(javax.ws.rs.core.Application.class)
-	public static void configureRestResources(Configuration<Object> singletons, @Autobuild PhoneResource phoneResource)
+	public static void configurePhoneRestResources(Configuration<Object> singletons, @Autobuild PhoneResource phoneResource)
 	{
 		singletons.add(phoneResource);
 	}
+	
+	/**
+	 * Example: Get and put eg. javascript in Maven Dependencies from pom.xml.
+	 * See http://www.webjars.org/
+	 * 
+	 * removed due to tapestry-react's use of WebJars
+	 * 
+	 * @param configuration
+	 */
+//	public static void contributeClasspathAssetAliasManager(MappedConfiguration<String, String> configuration)
+//	{
+//		configuration.add("webjars", "META-INF/resources/webjars");
+//	}
 
 }

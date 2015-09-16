@@ -12,6 +12,11 @@
             <artifactId>tapestry-core</artifactId>
             <version>${tapestry-release-version}</version>
         </dependency>
+        <dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-webresources</artifactId>
+			<version>${tapestry-release-version}</version>
+		</dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -53,13 +58,13 @@
             <scope>provided</scope>
         </dependency>
 
-		<!-- AngularJS via WebJars -->
+		<!-- AngularJS via WebJars - removed due to tapestry-react's use of WebJars
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>angularjs</artifactId>
 			<version>${angular-release-version}</version>
 		</dependency>
-
+-->
 		<!-- Tynamo RESTeasy -->
 		<dependency>
 			<groupId>org.tynamo</groupId>
@@ -79,17 +84,23 @@
 			<version>${jboss-resteasy-release-version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>de.eddyson</groupId>
+			<artifactId>tapestry-react</artifactId>
+			<version>${tapestry-react-release-version}</version>
+		</dependency>		
+
     </dependencies>
     <build>
-        <finalName>tap54</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <optimize>true</optimize>
                 </configuration>
             </plugin>
@@ -143,6 +154,13 @@
             <id>apache-staging</id>
             <url>https://repository.apache.org/content/groups/staging/</url>
         </repository>
+        
+        <!-- JCenter -->
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+
     </repositories>
 
     <properties>
@@ -154,5 +172,6 @@
         <angular-release-version>1.4.4</angular-release-version>
         <tapestry-resteasy-release-version>0.4.0</tapestry-resteasy-release-version>
         <jboss-resteasy-release-version>3.0-beta-4</jboss-resteasy-release-version>
+        <tapestry-react-release-version>0.1.2</tapestry-react-release-version>
     </properties>
 </project>

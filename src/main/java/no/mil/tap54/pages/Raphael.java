@@ -4,7 +4,7 @@ import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 
-@Import(module = { "my-raphael-code" })
+@Import(module = { "raphael/my-raphael-code" })
 public class Raphael
 {
 	@Property

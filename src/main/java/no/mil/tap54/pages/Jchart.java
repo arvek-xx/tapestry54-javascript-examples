@@ -4,7 +4,7 @@ import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 
-@Import(module = { "jchart", "my-jchart-code" }, stylesheet = { "main.css" })
+@Import(module = { "jchart", "my-jchart-code" }, stylesheet = { "jchart/main.css" })
 public class Jchart
 {
 	@Property

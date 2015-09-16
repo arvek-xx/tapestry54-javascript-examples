@@ -1,0 +1,27 @@
+<html t:type="layout" title="React - Plain" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" xmlns:r="tapestry-library:react">
+
+
+<p class="bg-warning">
+	TODO.<br/>
+	Plain use of React...
+</p>
+	<div class="well">
+		<p>Data are supposed to be fetched by a rest-service: <a href="rest/phones">rest/phones</a>,
+			but at the moment <em>public JSONArray getMyProducts()</em> is doing the job.</p>
+		<p>This is aso from react inside Tapestry:</p>
+		<p></p>
+		<strong>
+			<r:reactcomponent module="react/my-react-code" products="${myProducts}"/>
+<!-- 			<r:reactcomponent module="react/my-react2-code"/> -->
+		</strong>
+	</div>
+	
+	<h3>Preliminary conclutions</h3>
+	<ul>
+		<li>Angular is much easier for retreiving data from the server</li>
+		<li>Difficult to find the right syntax, especially for cjsx-files</li>
+	</ul>
+	<p>TBC...</p>
+
+</html>
