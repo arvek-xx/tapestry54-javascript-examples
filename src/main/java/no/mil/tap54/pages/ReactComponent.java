@@ -1,6 +1,6 @@
 package no.mil.tap54.pages;
 
-public class React
+public class ReactComponent
 {
 	public String getNameFromClassFile()
 	{

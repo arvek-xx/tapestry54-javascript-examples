@@ -63,6 +63,69 @@
 		</div>
 	</div>
 	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingReact">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReact" aria-expanded="true"
+					aria-controls="collapseReact"> React-Tapestry </a>
+			</h4>
+		</div>
+		<div id="collapseReact" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReact">
+			<div class="panel-body">
+				<p>
+					<t:pagelink page="ReactComponent" class="btn btn-primary btn-large">Run React (component) &raquo;</t:pagelink>
+					&nbsp;
+					<t:pagelink page="ReactPlain" class="btn btn-primary btn-large">Run React (plain) &raquo;</t:pagelink>
+				</p>
+				See: <a href="https://github.com/eddyson-de/tapestry-react" target="_blank">tapestry-react</a>.
+				<ul>
+					<li>Update dependency in <em>pom.xml</em>:<br/>
+						<mark><samp>
+							&lt;groupId&gt;de.eddyson&lt;/groupId&gt;<br/>
+							&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;tapestry-react&lt;/artifactId&gt;<br/>
+							&lt;version&gt;0.1.2&lt;/version&gt;
+						</samp></mark> 
+					</li>
+					<li>Use component in tml-file:<br/>
+						<mark><samp>
+							&lt;r:reactcomponent module="react/my-react-component-code" name="There..." /&gt;
+						</samp></mark>
+					</li>
+					<li>Create a file <em>src/main/resources/META-INF/modules/react/my-react-component-code.cjsx</em> which is your react code
+					</li>
+				</ul>
+				Alternative, you could use plain jsx-file (See: <a href="https://github.com/eddyson-de/tapestry-react" target="_blank">tapestry-react</a>):
+				<ul>
+					<li>Update dependency in <em>pom.xml</em>:<br/>
+						<mark><samp>
+							&lt;groupId&gt;de.eddyson&lt;/groupId&gt;<br/>
+							&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;tapestry-react&lt;/artifactId&gt;<br/>
+							&lt;version&gt;0.1.2&lt;/version&gt;
+						</samp></mark> 
+					</li>
+					<li>Import <em>my-react-plain-code.jsx</em> in your class-file:<br/>
+						<mark><samp>@Import(module = { "react/my-react-plain-code" })</samp></mark>
+					</li>
+					<li>Create a file <em>src/main/resources/META-INF/modules/react/my-react-plain-code.jsx</em> which is your react code
+					</li>
+				</ul>
+				
+				<p>
+					That's it! Hava a look at the source-code for <span class="badge"><em>pom.xml</em></span>,
+					 <span class="badge"><em>my-react-plain-code.cjsx</em></span>, <span class="badge"><em>ReactComponent.tml</em></span>
+				</p>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactPomCode"/>
+     			</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactTapestryJsCode"/>
+     			</pre>
+				<pre class="prettyprint linenums">
+					<t:OutputRaw value="reactTapestryTmlCode"/>
+     			</pre>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
 		<div class="panel-heading" role="tab" id="headingHigh">
 			<h4 class="panel-title">
 				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseHigh"
@@ -257,52 +320,6 @@
 				<pre class="prettyprint linenums">
 					<t:OutputRaw value="CoffeeJsCode"/>
 				</pre>
-			</div>
-		</div>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading" role="tab" id="headingReact">
-			<h4 class="panel-title">
-				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseReact" aria-expanded="true"
-					aria-controls="collapseReact"> React </a>
-			</h4>
-		</div>
-		<div id="collapseReact" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReact">
-			<div class="panel-body">
-				<p>
-					<t:pagelink page="React" class="btn btn-primary btn-large">Run React (tapestry-react) &raquo;</t:pagelink>
-				</p>
-				See: <a href="https://github.com/eddyson-de/tapestry-react" target="_blank">tapestry-react</a>.
-<!-- 				Eksample code is reused from <a href="http://facebook.github.io/react/docs/thinking-in-react.html" target="_blank">http://facebook.github.io/react/docs/thinking-in-react.html</a> -->
-				<ul>
-					<li>Update dependency in <em>pom.xml</em>:<br/>
-						<mark><samp>
-							&lt;groupId&gt;de.eddyson&lt;/groupId&gt;<br/>
-							&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;tapestry-react&lt;/artifactId&gt;<br/>
-							&lt;version&gt;0.1.2&lt;/version&gt;
-						</samp></mark> 
-					</li>
-					<li>Use component in tml-file:<br/>
-						<mark><samp>
-							&lt;r:reactcomponent module="react/my-react-code" name="There..." /&gt;
-						</samp></mark> 
-					</li>
-					<li>Create a file <em>src/main/resources/META-INF/modules/react/my-react-code.cjsx</em> which is your react code
-					</li>
-				</ul>
-				<p>
-					That's it! Hava a look at the source-code for <span class="badge"><em>pom.xml</em></span>,
-					 <span class="badge"><em>my-react-code.cjsx</em></span>, <span class="badge"><em>React.tml</em></span>
-				</p>
-				<pre class="prettyprint linenums">
-					<t:OutputRaw value="reactPomCode"/>
-     			</pre>
-				<pre class="prettyprint linenums">
-					<t:OutputRaw value="reactTapestryJsCode"/>
-     			</pre>
-				<pre class="prettyprint linenums">
-					<t:OutputRaw value="reactTapestryTmlCode"/>
-     			</pre>
 			</div>
 		</div>
 	</div>

@@ -35,6 +35,9 @@ public class Layout
 	private String ngPageName;
 
 	@Property
+	private String reactPageName;
+
+	@Property
 	private String chartPageName;
 
 	public String getClassForPageName()
@@ -43,6 +46,12 @@ public class Layout
 		{
 			return "active dropdown";
 		} else if (!isActiveNg() && isAngular())
+		{
+			return "dropdown";
+		} else if (isActiveReact() && isReact())
+		{
+			return "active dropdown";
+		} else if (!isActiveReact() && isReact())
 		{
 			return "dropdown";
 		} else if (isActiveChart() && isCharts())
@@ -57,14 +66,24 @@ public class Layout
 		}
 	}
 
+	public void setupRender()
+	{
+		logger.info("Page: " + resources.getPageName());
+	}
+	
 	public String[] getPageNames()
 	{
-		return new String[] { "Index", "NgPhones2", "Highcharts", "Bootstrap", "Coffee", "React" };
+		return new String[] { "Index", "NgPhones2", "ReactPlain", "Highcharts", "Bootstrap", "Coffee" };
 	}
 	
 	public String[] getNgPageNames()
 	{
 		return new String[] { "NgPhones2", "NgPhones", "NgTodo" };
+	}
+	
+	public String[] getReactPageNames()
+	{
+		return new String[] { "ReactPlain", "ReactComponent" };
 	}
 	
 	public String[] getChartPageNames()
@@ -77,16 +96,21 @@ public class Layout
 		return pageName.equalsIgnoreCase("NgPhones2");
 	}
 	
+	public boolean isReact()
+	{
+		return pageName.equalsIgnoreCase("ReactPlain");
+	}
+	
 	public boolean isCharts()
 	{
 		return pageName.equalsIgnoreCase("Highcharts");
 	}
+
 	
-	// 
+	// === Private ===
 	private boolean isActiveNg()
 	{
 		String _activePage = resources.getPageName();
-		logger.debug(_activePage);
 		boolean _isActive = false;
 		if (resources.getPageName().equalsIgnoreCase(pageName)) _isActive = true;
 		
@@ -95,10 +119,19 @@ public class Layout
 		return _isActive;
 	}
 
+	private boolean isActiveReact()
+	{
+		String _activePage = resources.getPageName();
+		boolean _isActive = false;
+		if (resources.getPageName().equalsIgnoreCase(pageName)) _isActive = true;
+		
+		if (_activePage.equalsIgnoreCase("ReactTapestry"))  _isActive = true;
+		return _isActive;
+	}
+
 	private boolean isActiveChart()
 	{
 		String _activePage = resources.getPageName();
-		logger.debug(_activePage);
 		boolean _isActive = false;
 		if (resources.getPageName().equalsIgnoreCase(pageName)) _isActive = true;
 		

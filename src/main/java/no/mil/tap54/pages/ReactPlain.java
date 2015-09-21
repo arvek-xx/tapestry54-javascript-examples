@@ -1,11 +1,13 @@
 package no.mil.tap54.pages;
 
-import org.apache.tapestry5.json.JSONArray;
-import org.apache.tapestry5.json.JSONObject;
+import org.apache.tapestry5.annotations.Import;
 
-
+@Import(module = { "react/my-react-plain-code" })
 public class ReactPlain
 {
+/**
+ * Not in use yet
+
 	JSONObject product1 = new JSONObject("category", "Sporting Goods", "price", "$49.99", "stocked", "true", "name", "Football");
 	JSONObject product2 = new JSONObject("category", "Sporting Goods", "price", "$9.99", "stocked", "true", "name", "Baseball");
 	JSONObject product3 = new JSONObject("category", "Sporting Goods", "price", "$29.99", "stocked", "true", "name", "Basketball");
@@ -24,5 +26,5 @@ public class ReactPlain
 	{
 		System.out.println(getMyProducts());
 	}
-	
+ */	
 }

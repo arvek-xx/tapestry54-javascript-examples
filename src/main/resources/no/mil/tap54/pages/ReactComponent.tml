@@ -1,18 +1,19 @@
-<html t:type="layout" title="React (tapestry-react)" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+<html t:type="layout" title="React (tapestry-react component)" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter" xmlns:r="tapestry-library:react">
 
 	<ul class="bg-info">
-		<li>Job is going on by <em>Jochen Berger</em>:</li>
+		<li>Great job is going on by <em>Jochen Berger</em>:</li>
 		<li>GitHub: <a href="https://github.com/eddyson-de/tapestry-react" target="_blank">tapestry-react</a></li>
 		<li>Jira: <a href="https://issues.apache.org/jira/browse/TAP5-2280" target="_blank">TAP5-2280...Facebook React
 				framework</a></li>
 	</ul>
 
 	<div class="well">
-		<p>This is from react inside Tapestry:</p>
+		<p>This is from &lt;r:reactcomponent/&gt; and a value from class-file:</p>
 		<p></p>
+		<hr/>
 		<strong>
-			<r:reactcomponent module="react/my-react-code" name="${nameFromClassFile}" />
+			<r:reactcomponent module="react/my-react-component-code" name="${nameFromClassFile}" />
 		</strong>
 	</div>
 

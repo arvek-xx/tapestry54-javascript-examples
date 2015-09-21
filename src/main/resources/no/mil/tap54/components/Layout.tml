@@ -4,9 +4,9 @@
 	xmlns:p="tapestry:parameter">
 <head>
 	<meta charset="utf-8" />
-	<title>Tapestry 5.4 examples</title>
+	<title>Tapestry 5.4 JavaScript examples</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Tapestry 5.4. Java, JavaScript, AngularJS, Facebook React, HTML5, CSS3, Bootstrap. Different techniques to include different javascript libraries/framework"/>
+	<meta name="description" content="Tapestry5.4 Java, JavaScript, AngularJS, Facebook React, HTML5, CSS3, JQuery, Bootstrap. Different techniques to include different javascript libraries/framework"/>
 	<meta name="author" content="Arve Klev" />
 	<link rel="shortcut icon" href="${asset:context:/favicon.ico}" />	
 </head>
@@ -33,15 +33,25 @@
 									</t:loop>
 								</ul>
 								<p:else>
-									<t:if test="Charts">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts<span class="caret"></span></a>
+									<t:if test="React">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">React<span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<t:loop source="chartPageNames" value="chartPageName">
-												<li><t:pagelink page="prop:chartPageName">${chartPageName}</t:pagelink></li>
+											<t:loop source="reactPageNames" value="reactPageName">
+												<li><t:pagelink page="prop:reactPageName">${reactPageName}</t:pagelink></li>
 											</t:loop>
 										</ul>
 										<p:else>
-											<t:pagelink page="prop:pageName">${pageName}</t:pagelink>
+											<t:if test="Charts">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts<span class="caret"></span></a>
+												<ul class="dropdown-menu" role="menu">
+													<t:loop source="chartPageNames" value="chartPageName">
+														<li><t:pagelink page="prop:chartPageName">${chartPageName}</t:pagelink></li>
+													</t:loop>
+												</ul>
+												<p:else>
+													<t:pagelink page="prop:pageName">${pageName}</t:pagelink>
+												</p:else>
+											</t:if>
 										</p:else>
 									</t:if>
 								</p:else>
@@ -50,7 +60,7 @@
 					</t:loop>
 				</ul>
 				<span class="navbar-right">
-					<li><t:pagelink page="login" class="btn navbar-btn">Sign in</t:pagelink></li>
+					<t:pagelink page="login" class="btn navbar-btn">Sign in</t:pagelink>
 				</span>
 			</div>
 			<!--/.nav-collapse -->
